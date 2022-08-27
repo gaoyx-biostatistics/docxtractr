@@ -144,8 +144,20 @@ read_docx <- function(path, track_changes=NULL) {
     cmnts <- xml2::xml_find_all(doc, ".//w:comment", ns=ns)
   }
 
+
+  # 修改 ----------------------------------------------------------------------
+
+
+  docmntstatus <- read_xml(sprintf("%s/docdata/word/commentsExtended.xml",tmpd))
+  status <- xml2::xml_find_all(docmntstatus,'.//w15:commentEx',ns = ns)
+
+
+  # end ---------------------------------------------------------------------
+
+
+
   # make an object for other functions to work with
-  docx <- list(docx=doc, ns=ns, tbls=tbls, cmnts=cmnts, path=path)
+  docx <- list(docx=doc, ns=ns, tbls=tbls, cmnts=cmnts, path=path,status = status)
 
   # special class helps us work with these things
   class(docx) <- "docx"

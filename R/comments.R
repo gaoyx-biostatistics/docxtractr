@@ -56,6 +56,18 @@ docx_extract_all_cmnts <- function(docx, include_text=FALSE) {
 
   }
 
+
+  # 修改 ----------------------------------------------------------------------
+
+
+  out$status <- as.numeric(unlist(purrr::map(cmnts$status,~xml2::xml_attr(.,'done'))))
+
+
+  # end ---------------------------------------------------------------------
+
+
+
+
   class(out) <- c("tbl_df", "tbl", "data.frame")
   out
 
