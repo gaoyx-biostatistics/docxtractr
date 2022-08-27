@@ -35,7 +35,7 @@
 - update for new xml2 pkg compatibility
 - added ability to extract comments
 
-# 0.1.1 released
+# 0.1.1 released y
 
 - had to change budget docx url since it was 404'ing
 

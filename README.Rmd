@@ -122,7 +122,7 @@ none <- read_docx(system.file("examples/none.docx", package="docxtractr"))
 
 docx_tbl_count(none)
 
-# wrapping in try since it will return an error
+# wrapping in try since it will return an error  5s
 # use docx_tbl_count before trying to extract in scripts/production
 try(docx_describe_tbls(none))
 try(docx_extract_tbl(none, 2))
